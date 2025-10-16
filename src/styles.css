@@ -1,0 +1,306 @@
+.patients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.patient-card {
+  background:white;
+  padding:1rem;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  display:flex;
+  flex-direction:column;
+  gap:0.5rem;
+}
+
+.patient-card h3 { margin:0; color:#0077b6; }
+.patient-card p { margin:0; font-size:0.95rem; color:#333; }
+.patient-card button {
+  margin-top:0.5rem;
+  background:#0077b6;
+  color:white;
+  border:none;
+  padding:0.5rem 1rem;
+  border-radius:8px;
+  cursor:pointer;
+}
+.patient-card button:hover { background:#005f87; }
+.home-hero { display:flex; justify-content:center; align-items:center; height:90vh; position:relative; overflow:hidden; }
+.animated-bg { position:absolute; inset:0; background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9); animation:gradientMove 15s ease infinite; z-index:0; }
+@keyframes gradientMove { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+.home-container { position:relative; z-index:10; text-align:center; padding:2rem; }
+.home-container h1 { font-size:3rem; font-weight:700; margin-bottom:1rem; color:#003f6b; }
+.home-container p { font-size:1.3rem; max-width:600px; margin-bottom:2rem; color:#1a1a1a; }
+.get-started-btn { background:#0077b6; color:white; padding:.9rem 2rem; border-radius:50px; text-decoration:none; font-size:1.1rem; transition:.3s; box-shadow:0 4px 10px rgba(0,119,182,0.3);}
+.get-started-btn:hover { background:#005f87; transform:scale(1.05); box-shadow:0 6px 14px rgba(0,95,135,0.4); }
+.header {
+  display: flex;
+  flex-direction: column;   /* stack logo + nav */
+  align-items: center;      /* center horizontally */
+  padding: 1rem;
+  background: linear-gradient(90deg, #0077b6, #00a8e8);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;       /* center text */
+  margin: 0;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+.nav-link.active {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+/* Responsive nav for mobile */
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.add-patient-card {
+  background: #f5f9ff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.add-patient-card h2 {
+  margin: 0 0 1rem 0;
+  color: #0077b6;
+  text-align: center;
+}
+
+.add-patient-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.add-patient-form input {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.add-patient-form input:focus {
+  outline: none;
+  border-color: #0077b6;
+  box-shadow: 0 0 5px rgba(0,119,182,0.3);
+}
+
+.add-patient-form button {
+  background: #0077b6;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.add-patient-form button:hover {
+  background: #005f87;
+  transform: scale(1.03);
+}
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fefefe;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  color: #0077b6;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.modal-content button {
+  margin-top: 1rem;
+  background: #0077b6;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.modal-content button:hover {
+  background: #005f87;
+  transform: scale(1.03);
+}
+.floating-shapes {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float 10s ease-in-out infinite;
+}
+
+.circle1 {
+  width: 150px; height: 150px;
+  background: #00a8e8;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.circle2 {
+  width: 200px; height: 200px;
+  background: #0077b6;
+  top: 50%;
+  left: 70%;
+  animation-delay: 3s;
+}
+
+.circle3 {
+  width: 100px; height: 100px;
+  background: #00b4d8;
+  top: 75%;
+  left: 40%;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(180deg); }
+}
+.home-features {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  z-index: 10;
+  position: relative;
+}
+
+.feature-card {
+  background: #f5f9ff;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-weight: 600;
+  color: #0077b6;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+}
+.about-page {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1rem;
+  background: #e6f2ff; /* subtle light blue background */
+  min-height: 80vh;
+}
+
+.about-container {
+  max-width: 900px;
+  width: 100%;
+  background: #ffffff;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.about-container h1 {
+  text-align: center;
+  color: #0077b6;
+  margin-bottom: 2rem;
+  font-size: 2.8rem;
+}
+
+.about-section {
+  background: #f5faff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #333;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.about-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.about-section.highlight {
+  background: #d0e7ff; /* slightly darker blue for emphasis */
+}
+
+.icon {
+  color: #0077b6;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
